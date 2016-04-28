@@ -8,12 +8,23 @@ package fr.iutvalence.info.dut.m2107;
 public enum TypeTroupe
 {
 	/**
-	 * This represents the ELEVE typed troops 
+	 * This represents the ELEVE typed troops
 	 */
-	ELEVE,
+	ELEVE(1),
 	
 	/**
 	 * This represents the PROF typed troops
+	 * A PROF is equivalent to five ELEVEs
 	 */
-	PROF;
+	PROF(5);
+	
+	/**
+	 * This represent the value of a troop
+	 */
+	private final int valeur;
+	
+	private TypeTroupe(int valeur)
+	{
+		this.valeur = valeur;
+	}
 }

@@ -10,13 +10,19 @@ public class Joueur
 	/**
 	 * this represents the player's name
 	 */
-	private String nom;
+	private final String nom;
 	
 	/**
-	 * this represents a player ready to play.
+	 * This represents the player's faction
 	 */
-	public Joueur()
+	private final TypeFaction faction;
+	
+	/**
+	 * this represents a player ready to play
+	 */
+	public Joueur(String nom, TypeFaction faction)
 	{
-		
+		this.nom = nom;
+		this.faction = faction;
 	}
 }
