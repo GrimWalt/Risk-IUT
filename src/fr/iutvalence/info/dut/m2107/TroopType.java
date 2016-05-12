@@ -5,7 +5,7 @@ package fr.iutvalence.info.dut.m2107;
  * 
  * @author Nico
  */
-public enum TypeTroupe
+public enum TroopType
 {
 	/**
 	 * This represents the ELEVE typed troops
@@ -23,7 +23,7 @@ public enum TypeTroupe
 	 */
 	private final int valeur;
 	
-	private TypeTroupe(int valeur)
+	private TroopType(int valeur)
 	{
 		this.valeur = valeur;
 	}

@@ -5,7 +5,7 @@ package fr.iutvalence.info.dut.m2107;
  * 
  * @author Nico
  */
-public enum TypeFaction
+public enum FactionType
 {
 	/**
 	 * This represents the INFO's faction

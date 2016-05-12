@@ -1,17 +1,26 @@
 package fr.iutvalence.info.dut.m2107;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 public class RiskGame
 {
 	/**
 	 * This represents all players who plays the game
 	 */
-	private final Joueur[] joueurs;
+	private final Player[] joueurs;
 	
-	public RiskGame(int nbJoueur)
+	private final static Map<Room, Set<Room>> DEFAULT_LINKS = createMap();
+	
+	public RiskGame(int nbJoueurs)
 	{
-		this.joueurs = new Joueur[nbJoueur];
+		this.joueurs = new Player[nbJoueurs];
 	}
-	
+
+
 	public void play()
 	{
 		System.out.println("Game started");
@@ -19,6 +28,104 @@ public class RiskGame
 		
 		
 		System.out.println("Game finished");
+	}
+	
+	/**
+	 * 
+	 * 
+	 * @return An unmodifiable map
+	 */
+	private static Map<Room, Set<Room>> createMap()
+	{
+        Map<Room, Set<Room>> result = new HashMap<Room, Set<Room>>();
+        
+        // Liaisons Bâtiment A
+        result.put(Board.BUILDINGS[0].getRooms()[0], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[1]));
+        result.put(Board.BUILDINGS[0].getRooms()[1], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[0], Board.BUILDINGS[0].getRooms()[2], Board.BUILDINGS[1].getRooms()[5]));
+        result.put(Board.BUILDINGS[0].getRooms()[2], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[1], Board.BUILDINGS[0].getRooms()[3], Board.BUILDINGS[5].getRooms()[1]));
+        result.put(Board.BUILDINGS[0].getRooms()[3], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[2], Board.BUILDINGS[0].getRooms()[4], Board.BUILDINGS[0].getRooms()[7], Board.BUILDINGS[0].getRooms()[9]));
+        result.put(Board.BUILDINGS[0].getRooms()[4], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[3], Board.BUILDINGS[0].getRooms()[5], Board.BUILDINGS[0].getRooms()[6]));
+        result.put(Board.BUILDINGS[0].getRooms()[5], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[4]));
+        result.put(Board.BUILDINGS[0].getRooms()[6], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[4]));
+        result.put(Board.BUILDINGS[0].getRooms()[7], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[3], Board.BUILDINGS[0].getRooms()[9], Board.BUILDINGS[0].getRooms()[8]));
+        result.put(Board.BUILDINGS[0].getRooms()[8], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[7], Board.BUILDINGS[0].getRooms()[9]));
+        result.put(Board.BUILDINGS[0].getRooms()[9], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[7], Board.BUILDINGS[0].getRooms()[8], Board.BUILDINGS[3].getRooms()[0]));
+        
+        // Liaisons Bâtiment B
+        result.put(Board.BUILDINGS[1].getRooms()[0], RiskGame.createSet(Board.BUILDINGS[2].getRooms()[3], Board.BUILDINGS[1].getRooms()[1]));
+        result.put(Board.BUILDINGS[1].getRooms()[1], RiskGame.createSet(Board.BUILDINGS[1].getRooms()[0], Board.BUILDINGS[1].getRooms()[2]));
+        result.put(Board.BUILDINGS[1].getRooms()[2], RiskGame.createSet(Board.BUILDINGS[1].getRooms()[1], Board.BUILDINGS[1].getRooms()[3]));
+        result.put(Board.BUILDINGS[1].getRooms()[3], RiskGame.createSet(Board.BUILDINGS[1].getRooms()[2], Board.BUILDINGS[1].getRooms()[4], Board.BUILDINGS[4].getRooms()[0]));
+        result.put(Board.BUILDINGS[1].getRooms()[4], RiskGame.createSet(Board.BUILDINGS[1].getRooms()[3], Board.BUILDINGS[1].getRooms()[5]));
+        result.put(Board.BUILDINGS[1].getRooms()[5], RiskGame.createSet(Board.BUILDINGS[1].getRooms()[4], Board.BUILDINGS[1].getRooms()[6], Board.BUILDINGS[0].getRooms()[1]));
+        result.put(Board.BUILDINGS[1].getRooms()[6], RiskGame.createSet(Board.BUILDINGS[1].getRooms()[5]));
+        
+        // Liaisons Bâtiment C
+        result.put(Board.BUILDINGS[2].getRooms()[0], RiskGame.createSet(Board.BUILDINGS[2].getRooms()[1], Board.BUILDINGS[3].getRooms()[3]));
+        result.put(Board.BUILDINGS[2].getRooms()[1], RiskGame.createSet(Board.BUILDINGS[2].getRooms()[0], Board.BUILDINGS[2].getRooms()[2]));
+        result.put(Board.BUILDINGS[2].getRooms()[2], RiskGame.createSet(Board.BUILDINGS[2].getRooms()[1], Board.BUILDINGS[2].getRooms()[3], Board.BUILDINGS[5].getRooms()[0]));
+        result.put(Board.BUILDINGS[2].getRooms()[3], RiskGame.createSet(Board.BUILDINGS[2].getRooms()[4], Board.BUILDINGS[1].getRooms()[0]));
+        result.put(Board.BUILDINGS[2].getRooms()[4], RiskGame.createSet(Board.BUILDINGS[2].getRooms()[3], Board.BUILDINGS[4].getRooms()[0]));
+        
+        // Liaisons Bâtiment D
+        result.put(Board.BUILDINGS[3].getRooms()[0], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[9], Board.BUILDINGS[3].getRooms()[1]));
+        result.put(Board.BUILDINGS[3].getRooms()[1], RiskGame.createSet(Board.BUILDINGS[3].getRooms()[0], Board.BUILDINGS[3].getRooms()[2], Board.BUILDINGS[5].getRooms()[1]));
+        result.put(Board.BUILDINGS[3].getRooms()[2], RiskGame.createSet(Board.BUILDINGS[3].getRooms()[1], Board.BUILDINGS[3].getRooms()[3]));
+        result.put(Board.BUILDINGS[3].getRooms()[3], RiskGame.createSet(Board.BUILDINGS[3].getRooms()[2], Board.BUILDINGS[2].getRooms()[0]));
+        
+        // Liaisons Bâtiment E
+        result.put(Board.BUILDINGS[4].getRooms()[0], RiskGame.createSet(Board.BUILDINGS[4].getRooms()[2], Board.BUILDINGS[4].getRooms()[1], Board.BUILDINGS[1].getRooms()[3], Board.BUILDINGS[2].getRooms()[4]));
+        result.put(Board.BUILDINGS[4].getRooms()[1], RiskGame.createSet(Board.BUILDINGS[4].getRooms()[0]));
+        result.put(Board.BUILDINGS[4].getRooms()[2], RiskGame.createSet(Board.BUILDINGS[4].getRooms()[0], Board.BUILDINGS[4].getRooms()[3]));
+        result.put(Board.BUILDINGS[4].getRooms()[3], RiskGame.createSet(Board.BUILDINGS[4].getRooms()[2]));
+        
+        // Liaisons Bâtiment CV
+        result.put(Board.BUILDINGS[5].getRooms()[0], RiskGame.createSet(Board.BUILDINGS[5].getRooms()[1], Board.BUILDINGS[2].getRooms()[2]));
+        result.put(Board.BUILDINGS[5].getRooms()[1], RiskGame.createSet(Board.BUILDINGS[5].getRooms()[0], Board.BUILDINGS[3].getRooms()[1], Board.BUILDINGS[0].getRooms()[2]));
+        
+        return Collections.unmodifiableMap(result);
+	}
+	
+	private static Set<Room> createSet(Room roomOne)
+	{
+		Set<Room> aSet = new HashSet();
+		
+		aSet.add(roomOne);
+		
+		return aSet;
+	}
+	
+	private static Set<Room> createSet(Room roomOne, Room roomTwo)
+	{
+		Set<Room> aSet = new HashSet();
+		
+		aSet.add(roomOne);
+		aSet.add(roomTwo);
+		
+		return aSet;
+	}
+	
+	private static Set<Room> createSet(Room roomOne, Room roomTwo, Room roomThree)
+	{
+		Set<Room> aSet = new HashSet();
+		
+		aSet.add(roomOne);
+		aSet.add(roomTwo);
+		aSet.add(roomThree);
+		
+		return aSet;
+	}
+	
+	private static Set<Room> createSet(Room roomOne, Room roomTwo, Room roomThree, Room roomFour)
+	{
+		Set<Room> aSet = new HashSet();
+		
+		aSet.add(roomOne);
+		aSet.add(roomTwo);
+		aSet.add(roomThree);
+		aSet.add(roomFour);
+		
+		return aSet;
 	}
 	
 }

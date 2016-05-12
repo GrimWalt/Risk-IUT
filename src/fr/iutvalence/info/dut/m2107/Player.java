@@ -5,7 +5,7 @@ package fr.iutvalence.info.dut.m2107;
  * 
  * @author Nico
  */
-public class Joueur
+public class Player
 {
 	/**
 	 * this represents the player's name
@@ -15,14 +15,24 @@ public class Joueur
 	/**
 	 * This represents the player's faction
 	 */
-	private final TypeFaction faction;
+	private final FactionType faction;
 	
 	/**
 	 * this represents a player ready to play
 	 */
-	public Joueur(String nom, TypeFaction faction)
+	public Player(String nom, FactionType faction)
 	{
 		this.nom = nom;
 		this.faction = faction;
+	}
+
+	public String getNom()
+	{
+		return nom;
+	}
+
+	public FactionType getFaction()
+	{
+		return faction;
 	}
 }
