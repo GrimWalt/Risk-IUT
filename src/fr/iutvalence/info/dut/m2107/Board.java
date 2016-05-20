@@ -33,6 +33,7 @@ public class Board
 								new Room("Labo de Langues", "A")
 						}
 						, "A"
+						, 5
 				),
 				// 1 - Bâtiment B
 				new Building
@@ -55,6 +56,7 @@ public class Board
 								new Room("Amphi B001", "B")
 						}
 						, "B"
+						, 4
 				),
 				// 2 - Bâtiment C
 				new Building
@@ -73,6 +75,7 @@ public class Board
 								new Room("Administration", "C")
 						}
 						, "C"
+						, 3
 				),
 				// 3 - Bâtiment D
 				new Building
@@ -89,6 +92,7 @@ public class Board
 								new Room("Salle Réseaux", "D")
 						}
 						, "D"
+						, 2
 				),
 				// 4 - Bâtiment E
 				new Building
@@ -105,6 +109,7 @@ public class Board
 								new Room("Salles d'escalade", "E")
 						}
 						, "E"
+						, 2
 				),
 				// 5 - Bâtiment CV (Centre de Vie)
 				new Building
@@ -117,6 +122,7 @@ public class Board
 								new Room("Machines à café", "CV")
 						}
 						, "CV"
+						, 1
 				)
 			};
 	

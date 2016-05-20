@@ -33,11 +33,11 @@ public class Room
 
 	public String getName()
 	{
-		return name;
+		return this.name;
 	}
 
 	public String getBuildingName()
 	{
-		return buildingName;
+		return this.buildingName;
 	}
 }
