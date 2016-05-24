@@ -119,7 +119,7 @@ public class RiskGame
 	 */
 	private static Set<Room> createSet(Room roomOne, Room roomTwo)
 	{
-		Set<Room> aSet = new HashSet();
+		Set<Room> aSet = new HashSet(); 
 		
 		aSet.add(roomOne);
 		aSet.add(roomTwo);

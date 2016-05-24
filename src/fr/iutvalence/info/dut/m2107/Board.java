@@ -1,6 +1,6 @@
 package fr.iutvalence.info.dut.m2107;
 /**
- * This represents the board
+ * This represents the board 
  */
 public class Board
 {

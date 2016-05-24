@@ -1,6 +1,6 @@
 package fr.iutvalence.info.dut.m2107;
 /**
- * This represents a building on the map
+ * This represents a building on the map 
  */
 public class Building
 {
