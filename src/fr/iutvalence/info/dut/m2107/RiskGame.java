@@ -23,7 +23,7 @@ public class RiskGame
 
 	/**
 	 * This represents a Risk game with players ready to play
-	 * @param nbJoueurs
+	 * @param nbJoueurs 	The number of player who plays the game
 	 */
 	public RiskGame(int nbJoueurs)
 	{
@@ -43,8 +43,8 @@ public class RiskGame
 	}
 	
 	/**
-	 * This represents the final cells of the board on a hashMap
-	 * @return An unmodifiable map
+	 * Creates a new hashMap which represents all links between rooms
+	 * @return result 	An unmodifiable map
 	 */
 	private static Map<Room, Set<Room>> createMap()
 	{
@@ -99,8 +99,8 @@ public class RiskGame
 
 	/**
 	 * Creates a set of one room to create the map
-	 * @param roomOne
-	 * @return this set
+	 * @param roomOne	The room to add in the set
+	 * @return aSet		The set of one room
 	 */
 	private static Set<Room> createSet(Room roomOne)
 	{
@@ -113,9 +113,9 @@ public class RiskGame
 
 	/**
 	 * Creates a set of two rooms to create the map
-	 * @param roomOne
-	 * @param roomTwo
-	 * @return this set
+	 * @param roomOne	The room to add in the set
+	 * @param roomTwo	The room to add in the set
+	 * @return aSet		The set of two room
 	 */
 	private static Set<Room> createSet(Room roomOne, Room roomTwo)
 	{
@@ -129,10 +129,10 @@ public class RiskGame
 
 	/**
 	 * Creates a set of three rooms to create the map
-	 * @param roomOne
-	 * @param roomTwo
-	 * @param roomThree
-	 * @return this set
+	 * @param roomOne	The room to add in the set
+	 * @param roomTwo	The room to add in the set
+	 * @param roomThree	The room to add in the set
+	 * @return aSet		The set of three room
 	 */
 	private static Set<Room> createSet(Room roomOne, Room roomTwo, Room roomThree)
 	{
@@ -147,11 +147,11 @@ public class RiskGame
 
 	/**
 	 * Creates a set of four rooms to create the map
-	 * @param roomOne
-	 * @param roomTwo
-	 * @param roomThree
-	 * @param roomFour
-	 * @return this set
+	 * @param roomOne	The room to add in the set
+	 * @param roomTwo	The room to add in the set
+	 * @param roomThree	The room to add in the set
+	 * @param roomFour	The room to add in the set
+	 * @return aSet		The set of four room
 	 */
 	private static Set<Room> createSet(Room roomOne, Room roomTwo, Room roomThree, Room roomFour)
 	{
