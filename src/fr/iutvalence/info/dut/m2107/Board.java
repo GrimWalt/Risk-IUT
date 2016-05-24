@@ -1,10 +1,14 @@
 package fr.iutvalence.info.dut.m2107;
 
-// TODO Add Javadoc
+/**
+ * This represents the board 
+ */
 public class Board
-{
-	// TODO Add Javadoc
-	// @formatter:off 
+{	 
+	/**
+	 * This represents all the buildings which are on the board
+	 */
+	// @formatter:off
 	public final static Building[] BUILDINGS = 
 			new Building[] 
 			{
@@ -129,11 +133,12 @@ public class Board
 			};
 	
 	// formatter:on
-	
-	// TODO Add Javadoc
+
+	/**
+	 * This represents a board ready to be used
+	 */
 	public Board()
 	{
 		
 	}
-
 }

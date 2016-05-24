@@ -6,24 +6,33 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-// TODO Add Javadoc
+/**
+ * This represents a game of Risk
+ */
 public class RiskGame
 {
 	/**
 	 * This represents all players who plays the game
 	 */
 	private final Player[] joueurs;
-	
-	// TODO Add Javadoc
+
+	/**
+	 * This represents the default links between the different rooms
+	 */
 	private final static Map<Room, Set<Room>> DEFAULT_LINKS = createMap();
-	
-	// TODO Add Javadoc
+
+	/**
+	 * This represents a Risk game with players ready to play
+	 * @param nbJoueurs
+	 */
 	public RiskGame(int nbJoueurs)
 	{
 		this.joueurs = new Player[nbJoueurs];
 	}
 
-	// TODO Add Javadoc
+	/**
+	 * This method plays the game
+	 */
 	public void play()
 	{
 		System.out.println("Game started");
@@ -33,10 +42,8 @@ public class RiskGame
 		System.out.println("Game finished");
 	}
 	
-	// TODO Complete Javadoc
 	/**
-	 * 
-	 * 
+	 * This represents the final cells of the board on a hashMap
 	 * @return An unmodifiable map
 	 */
 	private static Map<Room, Set<Room>> createMap()
@@ -89,8 +96,12 @@ public class RiskGame
         
         return Collections.unmodifiableMap(result);
 	}
-	
-	// TODO Add Javadoc
+
+	/**
+	 * Creates a set of one room to create the map
+	 * @param roomOne
+	 * @return this set
+	 */
 	private static Set<Room> createSet(Room roomOne)
 	{
 		Set<Room> aSet = new HashSet<Room>();
@@ -99,8 +110,13 @@ public class RiskGame
 		
 		return aSet;
 	}
-	
-	// TODO Add Javadoc
+
+	/**
+	 * Creates a set of two rooms to create the map
+	 * @param roomOne
+	 * @param roomTwo
+	 * @return this set
+	 */
 	private static Set<Room> createSet(Room roomOne, Room roomTwo)
 	{
 		Set<Room> aSet = new HashSet<Room>();
@@ -110,8 +126,14 @@ public class RiskGame
 		
 		return aSet;
 	}
-	
-	// TODO Add Javadoc
+
+	/**
+	 * Creates a set of three rooms to create the map
+	 * @param roomOne
+	 * @param roomTwo
+	 * @param roomThree
+	 * @return this set
+	 */
 	private static Set<Room> createSet(Room roomOne, Room roomTwo, Room roomThree)
 	{
 		Set<Room> aSet = new HashSet<Room>();
@@ -122,8 +144,15 @@ public class RiskGame
 		
 		return aSet;
 	}
-	
-	// TODO Add Javadoc
+
+	/**
+	 * Creates a set of four rooms to create the map
+	 * @param roomOne
+	 * @param roomTwo
+	 * @param roomThree
+	 * @param roomFour
+	 * @return this set
+	 */
 	private static Set<Room> createSet(Room roomOne, Room roomTwo, Room roomThree, Room roomFour)
 	{
 		Set<Room> aSet = new HashSet<Room>();

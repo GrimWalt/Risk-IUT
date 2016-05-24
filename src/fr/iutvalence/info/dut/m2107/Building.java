@@ -1,38 +1,61 @@
 package fr.iutvalence.info.dut.m2107;
 
-// TODO Add Javadoc
+/**
+ * This represents a building on the map 
+ */
 public class Building
 {
-	// TODO Add Javadoc
+	/**
+	 * This represents all the rooms which compose the building
+	 */
 	private final Room[] rooms;
-	
-	// TODO Add Javadoc
+
+	/**
+	 * This represents the name of the building (a letter)
+	 */
 	private final String name;
 	
-	// TODO Add Javadoc
+	/**
+	 * This represents the bonus of the building (you get it when you control all rooms of the building)
+	 */
 	private final int bonus;
 
-	// TODO Add Javadoc
+	/**
+	 * This represents a building ready to be conquered
+	 * @param rooms
+	 * @param name
+	 * @param bonus
+	 */
 	public Building(Room[] rooms, String name, int bonus)
 	{
 		this.rooms = rooms;
 		this.name = name;
 		this.bonus = bonus;
 	}
-	
-	// TODO Add Javadoc
+
+	/**
+	 * Getter for the name of a building
+	 * @return the name of the building
+	 */
 	public String getName()
 	{
 		return this.name;
 	}
-	
-	// TODO Add Javadoc
+
+	/**
+	 * Getter for the rooms which compose the building
+	 * @return all the rooms
+	 */
 	public Room[] getRooms()
 	{
 		return this.rooms;
 	}
-	
-	// TODO Add Javadoc
+
+	/**
+	 * Check if a player control all rooms of the building
+	 * @param player
+	 * @return true : the player control all the rooms
+	 */
 	public boolean isPlayerControlAllRooms(Player player)
 	{
 		for(int roomIndex = 0 ; roomIndex < this.rooms.length ; roomIndex++)
@@ -42,8 +65,11 @@ public class Building
 		}
 		return true;
 	}
-	
-	// TODO Add Javadoc
+
+	/**
+	 * Give the additional troops to a player if he controls all rooms of a building
+	 * @param player
+	 */
 	public void allowBonus(Player player)
 	{
 		if(this.isPlayerControlAllRooms(player));
