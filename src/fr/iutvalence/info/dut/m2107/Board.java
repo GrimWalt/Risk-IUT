@@ -1,8 +1,13 @@
 package fr.iutvalence.info.dut.m2107;
-
+/**
+ * This represents the board
+ */
 public class Board
 {
 	// @formatter:off 
+	/**
+	 * This represents all the buildings which are on the board
+	 */
 	public final static Building[] BUILDINGS = 
 			new Building[] 
 			{
@@ -127,6 +132,9 @@ public class Board
 			};
 	
 	// formatter:on
+	/**
+	 * This represents a board ready to be used
+	 */
 	public Board()
 	{
 		
