@@ -1,7 +1,9 @@
 package fr.iutvalence.info.dut.m2107;
 
+// TODO Add Javadoc
 public class Board
 {
+	// TODO Add Javadoc
 	// @formatter:off 
 	public final static Building[] BUILDINGS = 
 			new Building[] 
@@ -127,6 +129,8 @@ public class Board
 			};
 	
 	// formatter:on
+	
+	// TODO Add Javadoc
 	public Board()
 	{
 		

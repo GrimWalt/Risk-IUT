@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+// TODO Add Javadoc
 public class RiskGame
 {
 	/**
@@ -13,14 +14,16 @@ public class RiskGame
 	 */
 	private final Player[] joueurs;
 	
+	// TODO Add Javadoc
 	private final static Map<Room, Set<Room>> DEFAULT_LINKS = createMap();
 	
+	// TODO Add Javadoc
 	public RiskGame(int nbJoueurs)
 	{
 		this.joueurs = new Player[nbJoueurs];
 	}
 
-
+	// TODO Add Javadoc
 	public void play()
 	{
 		System.out.println("Game started");
@@ -30,6 +33,7 @@ public class RiskGame
 		System.out.println("Game finished");
 	}
 	
+	// TODO Complete Javadoc
 	/**
 	 * 
 	 * 
@@ -86,18 +90,20 @@ public class RiskGame
         return Collections.unmodifiableMap(result);
 	}
 	
+	// TODO Add Javadoc
 	private static Set<Room> createSet(Room roomOne)
 	{
-		Set<Room> aSet = new HashSet();
+		Set<Room> aSet = new HashSet<Room>();
 		
 		aSet.add(roomOne);
 		
 		return aSet;
 	}
 	
+	// TODO Add Javadoc
 	private static Set<Room> createSet(Room roomOne, Room roomTwo)
 	{
-		Set<Room> aSet = new HashSet();
+		Set<Room> aSet = new HashSet<Room>();
 		
 		aSet.add(roomOne);
 		aSet.add(roomTwo);
@@ -105,9 +111,10 @@ public class RiskGame
 		return aSet;
 	}
 	
+	// TODO Add Javadoc
 	private static Set<Room> createSet(Room roomOne, Room roomTwo, Room roomThree)
 	{
-		Set<Room> aSet = new HashSet();
+		Set<Room> aSet = new HashSet<Room>();
 		
 		aSet.add(roomOne);
 		aSet.add(roomTwo);
@@ -116,9 +123,10 @@ public class RiskGame
 		return aSet;
 	}
 	
+	// TODO Add Javadoc
 	private static Set<Room> createSet(Room roomOne, Room roomTwo, Room roomThree, Room roomFour)
 	{
-		Set<Room> aSet = new HashSet();
+		Set<Room> aSet = new HashSet<Room>();
 		
 		aSet.add(roomOne);
 		aSet.add(roomTwo);
