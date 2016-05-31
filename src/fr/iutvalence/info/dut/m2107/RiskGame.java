@@ -109,7 +109,7 @@ public class RiskGame
 	 */
 	public boolean isGameOver()
 	{
-		//TODO compl�ter
+		//TODO compléter
 		return false;
 	}
 	
@@ -121,7 +121,7 @@ public class RiskGame
 	{
         Map<Room, Set<Room>> result = new HashMap<Room, Set<Room>>();
         
-        // Liaisons Bâtiment A
+        // Liaisons BÃ¢timent A
         result.put(Board.BUILDINGS[0].getRooms()[0], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[1]));
         result.put(Board.BUILDINGS[0].getRooms()[1], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[0], Board.BUILDINGS[0].getRooms()[2], Board.BUILDINGS[1].getRooms()[5]));
         result.put(Board.BUILDINGS[0].getRooms()[2], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[1], Board.BUILDINGS[0].getRooms()[3], Board.BUILDINGS[5].getRooms()[1]));
@@ -133,7 +133,7 @@ public class RiskGame
         result.put(Board.BUILDINGS[0].getRooms()[8], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[7], Board.BUILDINGS[0].getRooms()[9]));
         result.put(Board.BUILDINGS[0].getRooms()[9], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[7], Board.BUILDINGS[0].getRooms()[8], Board.BUILDINGS[3].getRooms()[0]));
         
-        // Liaisons Bâtiment B
+        // Liaisons BÃ¢timent B
         result.put(Board.BUILDINGS[1].getRooms()[0], RiskGame.createSet(Board.BUILDINGS[2].getRooms()[3], Board.BUILDINGS[1].getRooms()[1]));
         result.put(Board.BUILDINGS[1].getRooms()[1], RiskGame.createSet(Board.BUILDINGS[1].getRooms()[0], Board.BUILDINGS[1].getRooms()[2]));
         result.put(Board.BUILDINGS[1].getRooms()[2], RiskGame.createSet(Board.BUILDINGS[1].getRooms()[1], Board.BUILDINGS[1].getRooms()[3]));
@@ -142,26 +142,26 @@ public class RiskGame
         result.put(Board.BUILDINGS[1].getRooms()[5], RiskGame.createSet(Board.BUILDINGS[1].getRooms()[4], Board.BUILDINGS[1].getRooms()[6], Board.BUILDINGS[0].getRooms()[1]));
         result.put(Board.BUILDINGS[1].getRooms()[6], RiskGame.createSet(Board.BUILDINGS[1].getRooms()[5]));
         
-        // Liaisons Bâtiment C
+        // Liaisons BÃ¢timent C
         result.put(Board.BUILDINGS[2].getRooms()[0], RiskGame.createSet(Board.BUILDINGS[2].getRooms()[1], Board.BUILDINGS[3].getRooms()[3]));
         result.put(Board.BUILDINGS[2].getRooms()[1], RiskGame.createSet(Board.BUILDINGS[2].getRooms()[0], Board.BUILDINGS[2].getRooms()[2]));
         result.put(Board.BUILDINGS[2].getRooms()[2], RiskGame.createSet(Board.BUILDINGS[2].getRooms()[1], Board.BUILDINGS[2].getRooms()[3], Board.BUILDINGS[5].getRooms()[0]));
         result.put(Board.BUILDINGS[2].getRooms()[3], RiskGame.createSet(Board.BUILDINGS[2].getRooms()[4], Board.BUILDINGS[1].getRooms()[0]));
         result.put(Board.BUILDINGS[2].getRooms()[4], RiskGame.createSet(Board.BUILDINGS[2].getRooms()[3], Board.BUILDINGS[4].getRooms()[0]));
         
-        // Liaisons Bâtiment D
+        // Liaisons BÃ¢timent D
         result.put(Board.BUILDINGS[3].getRooms()[0], RiskGame.createSet(Board.BUILDINGS[0].getRooms()[9], Board.BUILDINGS[3].getRooms()[1]));
         result.put(Board.BUILDINGS[3].getRooms()[1], RiskGame.createSet(Board.BUILDINGS[3].getRooms()[0], Board.BUILDINGS[3].getRooms()[2], Board.BUILDINGS[5].getRooms()[1]));
         result.put(Board.BUILDINGS[3].getRooms()[2], RiskGame.createSet(Board.BUILDINGS[3].getRooms()[1], Board.BUILDINGS[3].getRooms()[3]));
         result.put(Board.BUILDINGS[3].getRooms()[3], RiskGame.createSet(Board.BUILDINGS[3].getRooms()[2], Board.BUILDINGS[2].getRooms()[0]));
         
-        // Liaisons Bâtiment E
+        // Liaisons BÃ¢timent E
         result.put(Board.BUILDINGS[4].getRooms()[0], RiskGame.createSet(Board.BUILDINGS[4].getRooms()[2], Board.BUILDINGS[4].getRooms()[1], Board.BUILDINGS[1].getRooms()[3], Board.BUILDINGS[2].getRooms()[4]));
         result.put(Board.BUILDINGS[4].getRooms()[1], RiskGame.createSet(Board.BUILDINGS[4].getRooms()[0]));
         result.put(Board.BUILDINGS[4].getRooms()[2], RiskGame.createSet(Board.BUILDINGS[4].getRooms()[0], Board.BUILDINGS[4].getRooms()[3]));
         result.put(Board.BUILDINGS[4].getRooms()[3], RiskGame.createSet(Board.BUILDINGS[4].getRooms()[2]));
         
-        // Liaisons Bâtiment CV
+        // Liaisons BÃ¢timent CV
         result.put(Board.BUILDINGS[5].getRooms()[0], RiskGame.createSet(Board.BUILDINGS[5].getRooms()[1], Board.BUILDINGS[2].getRooms()[2]));
         result.put(Board.BUILDINGS[5].getRooms()[1], RiskGame.createSet(Board.BUILDINGS[5].getRooms()[0], Board.BUILDINGS[3].getRooms()[1], Board.BUILDINGS[0].getRooms()[2]));
         
