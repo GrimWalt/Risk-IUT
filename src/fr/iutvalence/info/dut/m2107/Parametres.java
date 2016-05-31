@@ -15,10 +15,10 @@ public class Parametres extends JFrame implements ActionListener
     public Parametres()
     {
         setSize(750, 500);
-        setTitle("Paramètres");
+        setTitle("ParamÃ¨tres");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         
-        window = new JFrame("Paramètres");
+        window = new JFrame("ParamÃ¨tres");
 		window.setLayout(new GridLayout(1,1));
 
         image.setIcon(new ImageIcon(("G:\\Git\\Risk-IUT\\Image\\logo Risk.jpg")));
