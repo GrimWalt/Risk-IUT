@@ -104,12 +104,18 @@ public class RiskGame
 	}
 	
 	/**
+	 * 
 	 * @return boolean	true	the game is over
 	 * 					false	the game is not over
 	 */
 	public boolean isGameOver()
 	{
-		//TODO compléter
+		
+		for(int i = 0; i < Board.BUILDINGS.length-1 ;i++)
+		{
+			if(Board.BUILDINGS[i].isPlayerControlAllRooms(this.joueurs[currentPlayer]))
+				return true;
+		}
 		return false;
 	}
 	
