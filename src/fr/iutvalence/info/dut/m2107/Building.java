@@ -72,6 +72,6 @@ public class Building
 	public void allowBonus(Player player)
 	{
 		if(this.isPlayerControlAllRooms(player));
-			player.setNumberOfTroop(player.getNumberOfTroop() + this.bonus);
+			player.setAmountOfTroop(player.getAmountOfTroop() + this.bonus);
 	}
 }

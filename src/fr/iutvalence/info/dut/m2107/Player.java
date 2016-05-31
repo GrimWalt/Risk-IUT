@@ -1,5 +1,7 @@
 package fr.iutvalence.info.dut.m2107;
 
+import java.util.Scanner;
+
 /**
  * This represents the player
  * 
@@ -7,6 +9,8 @@ package fr.iutvalence.info.dut.m2107;
  */
 public class Player
 {
+	public static final int INITIAL_AMOUNT_OF_TROOP = 32;
+	
 	/**
 	 * This represents the player's name
 	 */
@@ -20,16 +24,30 @@ public class Player
 	/**
 	 * This represents the troop number of a player
 	 */
-	private int numberOfTroop;
+	private int amountOfTroop;
+	
+	/**
+	 * This represents the player's number
+	 */
+	private int playerNumber;
+	
+	/**
+	 * This represent an input stream which allow player to choose his faction or his name
+	 */
+	private Scanner playerInput;
 	
 	/**
 	 * This represents a player ready to play
 	 */
-	public Player(String name, FactionType faction, int nbTroop)
+	public Player(int playerNumber) throws InvalidPlayerNumberException
 	{
-		this.name = name;
-		this.faction = faction;
-		this.numberOfTroop = nbTroop;
+		if(playerNumber < 1)
+			throw new InvalidPlayerNumberException();
+		this.playerInput = new Scanner(System.in);
+		this.name = this.askForName();
+		this.faction = this.askForFaction();
+		this.playerNumber = playerNumber;
+		this.amountOfTroop = INITIAL_AMOUNT_OF_TROOP;
 	}
 	
 	/**
@@ -51,20 +69,20 @@ public class Player
 	/**
 	 * @return numberOfTroop The player's number of troop
 	 */
-	public int getNumberOfTroop()
+	public int getAmountOfTroop()
 	{
-		return this.numberOfTroop;
+		return this.amountOfTroop;
 	}
 
 	/**
 	 * Set the number of troop
 	 * @param numberOfTroop
 	 */
-	public void setNumberOfTroop(int numberOfTroop)
+	public void setAmountOfTroop(int amountOfTroop)
 	{
-		this.numberOfTroop = numberOfTroop;
-		if(numberOfTroop < 0)
-			this.numberOfTroop = 0;
+		this.amountOfTroop = amountOfTroop;
+		if(amountOfTroop < 0)
+			this.amountOfTroop = 0;
 	}
 	
 	// TODO Completer 
@@ -90,6 +108,16 @@ public class Player
 		
 	}
 	
+	//TODO Completer
+	/**
+	 * This represent the strengthening phase of a player's turn which is required 
+	 */
+	public void firstStrengthening()
+	{
+		//TODO Increase number of troops of players
+		
+	}
+	
 	// TODO Completer
 	/**
 	 * This represent the strengthening phase of a player's turn which is required 
@@ -97,5 +125,36 @@ public class Player
 	public void strengthening()
 	{
 		
+	}
+	
+	private String askForName()
+	{
+		System.out.print("Name : ");
+		String name = this.playerInput.nextLine();
+		
+		return name;
+	}
+
+	private FactionType askForFaction()
+	{
+		int randFaction = (int) Math.floor(4*Math.random()+1);
+		FactionType faction = null;
+
+		switch(randFaction)
+		{
+			case 1:
+				faction = FactionType.GEA;
+				break;
+			case 2:
+				faction = FactionType.INFO;
+				break;
+			case 3:
+				faction = FactionType.RT;
+				break;
+			case 4:
+				faction = FactionType.TC;
+				break;
+		}
+		return faction;
 	}
 }

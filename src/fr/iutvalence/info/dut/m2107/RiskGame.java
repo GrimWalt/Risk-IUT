@@ -12,6 +12,11 @@ import java.util.Set;
 public class RiskGame
 {
 	/**
+	 * This represent the current player when the game is beginning
+	 */
+	public static final int INITIAL_CURRENT_PLAYER = 0;
+	
+	/**
 	 * This represents all players who plays the game
 	 */
 	private final Player[] joueurs;
@@ -22,24 +27,90 @@ public class RiskGame
 	private final static Map<Room, Set<Room>> DEFAULT_LINKS = createMap();
 
 	/**
+	 * This represents the number of the currentPlayer.
+	 */
+	private int currentPlayer;
+	
+	/**
 	 * This represents a Risk game with players ready to play
 	 * @param nbJoueurs 	The number of player who plays the game
 	 */
 	public RiskGame(int nbJoueurs)
 	{
 		this.joueurs = new Player[nbJoueurs];
+		for(int joueurIndex = 0 ; joueurIndex < nbJoueurs ; joueurIndex++)
+		{
+			try
+			{
+				this.joueurs[joueurIndex] = new Player(joueurIndex+1);
+			}
+			catch (InvalidPlayerNumberException e)
+			{
+				e.printStackTrace();
+			}
+		}
+		this.currentPlayer = INITIAL_CURRENT_PLAYER;
 	}
 
 	/**
 	 * This method plays the game
+	 * 
+	 * firstStrengthening() // TODO : add this method
+	 * while !isGameOver()
+	 * 	{
+	 * 		strengthening(we will see)
+	 * 		moveTroops(we will see)
+	 * 		attack(we will see)
+	 * 		switchPlayer()
+	 * }
 	 */
 	public void play()
 	{
 		System.out.println("Game started");
 		
+		while(this.currentPlayer!=this.joueurs.length-1)
+		{
+			this.joueurs[this.currentPlayer].firstStrengthening();
+			this.switchPlayer();
+		}
+			
+		while(!isGameOver())
+		{
+			this.currentPlayer = 0;
+			this.joueurs[this.currentPlayer].strengthening();
+			this.joueurs[this.currentPlayer].moveTroops(null, null, this.currentPlayer);
+			this.joueurs[this.currentPlayer].attack(null, null);
+			this.switchPlayer();
+		}
 		
+		for(int i = 0 ; i < this.joueurs.length ; i++)
+		{
+			System.out.println("Name : "+this.joueurs[i].getName()+"\nFaction : "+this.joueurs[i].getFaction());
+		}
+
 		
 		System.out.println("Game finished");
+	}
+	
+	/**
+	 * This method is used for switch the players.
+	 */
+	private void switchPlayer()
+	{
+		if(this.currentPlayer == this.joueurs.length-1)
+			this.currentPlayer = 0;
+		else
+			this.currentPlayer++;		
+	}
+	
+	/**
+	 * @return boolean	true	the game is over
+	 * 					false	the game is not over
+	 */
+	public boolean isGameOver()
+	{
+		//TODO compléter
+		return false;
 	}
 	
 	/**
@@ -165,4 +236,8 @@ public class RiskGame
 		return aSet;
 	}
 	
+	public static Map<Room, Set<Room>> getDefaultLinks()
+	{
+		return DEFAULT_LINKS;
+	}
 }

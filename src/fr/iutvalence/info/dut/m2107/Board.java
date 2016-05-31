@@ -132,7 +132,7 @@ public class Board
 				)
 			};
 	
-	// formatter:on
+	// @formatter:on
 
 	/**
 	 * This represents a board ready to be used

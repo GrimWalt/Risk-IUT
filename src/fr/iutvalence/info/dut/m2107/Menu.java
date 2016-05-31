@@ -51,9 +51,9 @@ public class Menu extends JFrame implements ActionListener
          */
         public  void    actionPerformed(ActionEvent e)
         {
-        	 IHM.fenetre.setVisible(true);
+        	 Parametres.window.setVisible(true);
         	 window.dispose();
-        	 IHM.fenetre.setResizable(false);
+        	 Parametres.window.setResizable(false);
         }
     }
     
