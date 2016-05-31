@@ -32,12 +32,34 @@ public class RiskGame
 
 	/**
 	 * This method plays the game
+	 * 
+	 * firstStrengthening() // TODO : add this method
+	 * while !isGameOver()
+	 * 	{
+	 * 		strengthening(we will see)
+	 * 		moveTroops(we will see)
+	 * 		attack(we will see)
+	 * 		switchPlayer()
+	 * }
 	 */
+
 	public void play()
 	{
 		System.out.println("Game started");
 		
+		/* firstStrengthening() // TODO : add this method (where ???)
+		while(!isGameOver())
+		{
+			int currentPlayer = 0;
+			this.joueurs[currentPlayer].strengthening(); //TODO : add the currentPlayer (int)
+			this.joueurs[currentPlayer].moveTroops(null, null, currentPlayer);
+			this.joueurs[currentPlayer].attack(null, null);
+			this.switchPlayer(joueurs[currentPlayer]);
+		}
+		*/
 		
+	
+
 		
 		System.out.println("Game finished");
 	}
