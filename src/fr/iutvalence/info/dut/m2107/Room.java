@@ -22,9 +22,14 @@ public class Room
 	private Player controller;
 	
 	/**
+	 * This represents the number of troops which are on the room.
+	 */
+	private int nbTroops;
+	
+	/**
 	 * Create a room uncontrolled (without a controller)
-	 * @param name			The room's name
-	 * @param buildingName	The name of the building where the room is
+	 * @param name The room's name
+	 * @param buildingName The name of the building where the room is
 	 */
 	public Room(String name, String buildingName)
 	{
@@ -34,9 +39,9 @@ public class Room
 	
 	/**
 	 * Create a room controlled by a player (with a controller)
-	 * @param name			The room's name
-	 * @param buildingName	The room's name
-	 * @param controller	The room's controller
+	 * @param name The room's name
+	 * @param buildingName The room's name
+	 * @param controller The room's controller
 	 */
 	public Room(String name, String buildingName, Player controller)
 	{
@@ -46,7 +51,7 @@ public class Room
 	}
 
 	/**
-	 * @return controller 	The room's controller
+	 * @return controller : The room's controller
 	 */
 	public Player getController()
 	{
@@ -55,7 +60,7 @@ public class Room
 
 	/**
 	 * Sets the room's controller
-	 * @param controller	The player who will controls the room
+	 * @param controller The player who will controls the room
 	 */
 	public void setController(Player controller)
 	{
@@ -63,7 +68,7 @@ public class Room
 	}
 
 	/**
-	 * @return name 	The room's name
+	 * @return name : The room's name
 	 */
 	public String getName()
 	{
@@ -71,10 +76,28 @@ public class Room
 	}
 	
 	/**
-	 * @return buildingName The building's name
+	 * @return buildingName : The building's name
 	 */
 	public String getBuildingName()
 	{
 		return this.buildingName;
+	}
+	
+	/**
+	 * Getter for nbTroops
+	 * @return nbTroops : The number of troops which are on the room
+	 */
+	public int getNbTroops()
+	{
+		return this.nbTroops;
+	}
+	
+	/**
+	 * setter for nbTroops
+	 * @param nbTroops The new number of troops which will be on the room
+	 */
+	public void setNbTroops(int nbTroops)
+	{
+		this.nbTroops = nbTroops;
 	}
 }

@@ -8,7 +8,6 @@ public class IHM extends JFrame implements ActionListener
 {
     JPanel Game = new JPanel ();
     JLabel salver = new JLabel();
-    JLabel affichage = new JLabel();
     private JButton strengthening, attack, moveTroops, nextplayer, leave, settings;
     static JFrame window;
     
@@ -42,7 +41,6 @@ public class IHM extends JFrame implements ActionListener
         nextplayer.setBounds(100, 100, 100, 100);
         leave.setBounds(100, 100, 100, 100);
         Game.setBounds(0, 0, 800, 500);
-        affichage.setBounds(500, 500, 100, 100);
         window.setBounds(0, 0, 1280, 1024);
 
         Game.add(salver);
@@ -50,82 +48,79 @@ public class IHM extends JFrame implements ActionListener
         Game.add(attack);
         Game.add(moveTroops);
         Game.add(nextplayer);
-        
-        affichage.add(leave);
-        affichage.add(settings);
-        
-        window.add(affichage);
+        Game.add(leave);
+
         window.add(Game);
         
-        window.setVisible(false);       
+        window.setVisible(false);
     }
 
-    public  class   TraitementBut1 implements   ActionListener
+    public class TraitementBut1 implements ActionListener
     {
         /**
         * mandatory because test implements the ActionListener interface
         */
-       public  void    actionPerformed(ActionEvent e)
+       public void actionPerformed(ActionEvent e)
        {
        	System.out.println("Renforcement");
        }
     }
     
-     public  class   TraitementBut2 implements   ActionListener
-     {
-         /**
-         * mandatory because test implements the ActionListener interface
-         */
-        public  void    actionPerformed(ActionEvent e)
-        {
-        	System.out.println("Attaque");
-        }
+    public class TraitementBut2 implements ActionListener
+    {
+        /**
+        * mandatory because test implements the ActionListener interface
+        */
+       public void actionPerformed(ActionEvent e)
+       {
+    	   System.out.println("Attaque");
+       }
      }
-     
-     public  class   TraitementBut3 implements   ActionListener
+    
+     public class TraitementBut3 implements ActionListener
      {
           /**
           * mandatory because test implements the ActionListener interface
           */
-         public  void    actionPerformed(ActionEvent e)
+         public void actionPerformed(ActionEvent e)
          {
         	 System.out.println("Déplacement");
          }
      }
      
-      public  class   TraitementBut4 implements   ActionListener
+      public class TraitementBut4 implements ActionListener
      {
           /**
           * mandatory because test implements the ActionListener interface
           */
-         public  void    actionPerformed(ActionEvent e)
+         public void actionPerformed(ActionEvent e)
          {
         	 System.out.println("Joueur suivant");
          }
       }
       
       
-      public  class   TraitementBut5 implements   ActionListener
+      public class TraitementBut5 implements ActionListener
       {
            /**
            * mandatory because test implements the ActionListener interface
            */
-          public  void    actionPerformed(ActionEvent e)
+          public void actionPerformed(ActionEvent e)
           {
-          	 window.dispose();    
+          	 window.dispose();
           }
       }
       
-      public  class   TraitementBut6 implements   ActionListener
+      public class TraitementBut6 implements ActionListener
       {
  	       /**
 	         * mandatory because test implements the ActionListener interface
 	         */
-	        public  void    actionPerformed(ActionEvent e)
+	        public void actionPerformed(ActionEvent e)
 	        {
-	        	 Parametres.window.setVisible(true);
-	        	 window.dispose();
-	        	 Parametres.window.setResizable(false);
+	        	Settings.window.setVisible(true);
+	        	window.dispose();
+	        	Settings.window.setResizable(false);
 	        }
 	  }
     	    
@@ -135,4 +130,3 @@ public class IHM extends JFrame implements ActionListener
 		// TODO Auto-generated method stub
 	}
 }
- 

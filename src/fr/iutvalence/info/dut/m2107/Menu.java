@@ -44,27 +44,27 @@ public class Menu extends JFrame implements ActionListener
         validate(); 
     }
     
-    public  class   TraitementBut1 implements   ActionListener
+    public class TraitementBut1 implements ActionListener
     {
          /**
          * mandatory because test implements the ActionListener interface
          */
-        public  void    actionPerformed(ActionEvent e)
+        public void actionPerformed(ActionEvent e)
         {
-        	 Parametres.window.setVisible(true);
-        	 window.dispose();
-        	 Parametres.window.setResizable(false);
+        	Settings.window.setVisible(true);
+        	window.dispose();
+        	Settings.window.setResizable(false);
         }
     }
     
-     public  class   TraitementBut2 implements   ActionListener
+     public class TraitementBut2 implements ActionListener
     {
          /**
          * mandatory because test implements the ActionListener interface
          */
-        public  void    actionPerformed(ActionEvent e)
+        public void actionPerformed(ActionEvent e)
         {
-        	 window.dispose();
+        	window.dispose();
         }
     }
 

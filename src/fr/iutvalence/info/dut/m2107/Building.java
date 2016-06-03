@@ -22,9 +22,9 @@ public class Building
 
 	/**
 	 * This represents a building ready to be conquered
-	 * @param rooms 	All rooms which compose the building
-	 * @param name 		The building's name
-	 * @param bonus 	The building's bonus
+	 * @param rooms All rooms which compose the building
+	 * @param name The building's name
+	 * @param bonus The building's bonus
 	 */
 	public Building(Room[] rooms, String name, int bonus)
 	{
@@ -34,7 +34,7 @@ public class Building
 	}
 
 	/**
-	 * @return name		The building's name
+	 * @return name : The building's name
 	 */
 	public String getName()
 	{
@@ -42,7 +42,7 @@ public class Building
 	}
 
 	/**
-	 * @return rooms	All the rooms of a building
+	 * @return rooms : All the rooms of a building
 	 */
 	public Room[] getRooms()
 	{
@@ -51,9 +51,8 @@ public class Building
 
 	/**
 	 * Check if a player controls all rooms of the building
-	 * @param player 	The player who is checked
-	 * @return boolean 	true 	The player control all the rooms
-	 * 					false 	the player do not control all the rooms
+	 * @param player The player who is checked
+	 * @return true : The player control all the rooms, false : the player do not control all the rooms
 	 */
 	public boolean isPlayerControlAllRooms(Player player)
 	{
@@ -67,7 +66,7 @@ public class Building
 
 	/**
 	 * Give the additional troops to a player if he controls all rooms of a building
-	 * @param player 	The player who receive the bonus
+	 * @param player The player who receive the bonus
 	 */
 	public void allowBonus(Player player)
 	{

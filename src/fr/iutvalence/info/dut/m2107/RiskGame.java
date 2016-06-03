@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 
 /**
@@ -32,8 +33,18 @@ public class RiskGame
 	private int currentPlayer;
 	
 	/**
+	 * This represent an input stream which allow player to choose if he want to attack
+	 */
+	private Scanner playerAttack;
+		
+	/**
+	 * This represent an input stream which allow player to choose if he want to move troops
+	 */
+	private Scanner playerMoveTroops;
+	
+	/**
 	 * This represents a Risk game with players ready to play
-	 * @param nbJoueurs 	The number of player who plays the game
+	 * @param nbJoueurs The number of player who plays the game
 	 */
 	public RiskGame(int nbJoueurs)
 	{
@@ -66,7 +77,8 @@ public class RiskGame
 	 */
 	public void play()
 	{
-		System.out.println("Game started");
+		IHM.window.setVisible(true);
+		Settings.window.dispose();
 		
 		while(this.currentPlayer!=this.joueurs.length-1)
 		{
@@ -78,8 +90,26 @@ public class RiskGame
 		{
 			this.currentPlayer = 0;
 			this.joueurs[this.currentPlayer].strengthening();
-			this.joueurs[this.currentPlayer].moveTroops(null, null, this.currentPlayer);
-			this.joueurs[this.currentPlayer].attack(null, null);
+			
+			System.out.print("Attack ?");
+			boolean attack = this.playerAttack.nextBoolean();
+			if(attack)
+				this.joueurs[this.currentPlayer].attack(null, Player.DEFAULT_NUMBER_OF_TROOPS_TO_ATTACK, null);
+			
+			System.out.print("Move Troops ?");
+			boolean moveTroops = this.playerMoveTroops.nextBoolean();
+			if(moveTroops)
+			{
+				try 
+				{
+					this.joueurs[this.currentPlayer].moveTroops(null, null, this.currentPlayer);
+				} 
+				catch (NotYourRoomException e) 
+				{
+					System.err.println("It's not your room");
+				}
+			}
+			
 			this.switchPlayer();
 		}
 		
@@ -105,8 +135,7 @@ public class RiskGame
 	
 	/**
 	 * 
-	 * @return boolean	true	the game is over
-	 * 					false	the game is not over
+	 * @return true : the game is over, false : the game is not over
 	 */
 	public boolean isGameOver()
 	{
@@ -121,7 +150,7 @@ public class RiskGame
 	
 	/**
 	 * Creates a new hashMap which represents all links between rooms
-	 * @return result 	An unmodifiable map
+	 * @return result : An unmodifiable map
 	 */
 	private static Map<Room, Set<Room>> createMap()
 	{
@@ -176,8 +205,8 @@ public class RiskGame
 
 	/**
 	 * Creates a set of one room to create the map
-	 * @param roomOne	The room to add in the set
-	 * @return aSet		The set of one room
+	 * @param roomOne The room to add in the set
+	 * @return aSet : The set of one room
 	 */
 	private static Set<Room> createSet(Room roomOne)
 	{
@@ -192,7 +221,7 @@ public class RiskGame
 	 * Creates a set of two rooms to create the map
 	 * @param roomOne	The room to add in the set
 	 * @param roomTwo	The room to add in the set
-	 * @return aSet		The set of two room
+	 * @return aSet : The set of two room
 	 */
 	private static Set<Room> createSet(Room roomOne, Room roomTwo)
 	{
@@ -209,7 +238,7 @@ public class RiskGame
 	 * @param roomOne	The room to add in the set
 	 * @param roomTwo	The room to add in the set
 	 * @param roomThree	The room to add in the set
-	 * @return aSet		The set of three room
+	 * @return aSet : The set of three room
 	 */
 	private static Set<Room> createSet(Room roomOne, Room roomTwo, Room roomThree)
 	{
@@ -228,7 +257,7 @@ public class RiskGame
 	 * @param roomTwo	The room to add in the set
 	 * @param roomThree	The room to add in the set
 	 * @param roomFour	The room to add in the set
-	 * @return aSet		The set of four room
+	 * @return aSet : The set of four room
 	 */
 	private static Set<Room> createSet(Room roomOne, Room roomTwo, Room roomThree, Room roomFour)
 	{
@@ -245,5 +274,13 @@ public class RiskGame
 	public static Map<Room, Set<Room>> getDefaultLinks()
 	{
 		return DEFAULT_LINKS;
+	}
+	
+	/**
+	 * @return currentPlayer : The current player of the game
+	 */
+	public int getCurrentPlayer()
+	{
+		return this.currentPlayer;
 	}
 }
